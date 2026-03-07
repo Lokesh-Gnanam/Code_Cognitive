@@ -599,3 +599,73 @@ The given testcases fall under the following constraints:
 | **2** | **10**<br>`132 129 144 177 148 134 157 133 183 155` | **Students' height order before sorting:**<br>`132 129 144 177 148 134 157 133 183 155`<br>**...** (iterations 1-9) ...<br>**After sorting, the height order is:**<br>`129 132 133 134 144 148 155 157 177 183` |
 
 ----------
+
+```
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int arr[100];
+
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    cout << "Students' height order before sorting:" << endl;
+
+    for(int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+
+    for(int i = 0; i < n-1; i++)
+    {
+        int minIndex = i;
+
+        for(int j = i+1; j < n; j++)
+        {
+            if(arr[j] < arr[minIndex])
+                minIndex = j;
+        }
+
+        // swap
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+
+        cout << "At the end of iteration " << i+1 << ":" << endl;
+
+        for(int k = 0; k < n; k++)
+            cout << arr[k] << " ";
+        cout << endl;
+    }
+
+    cout << "After sorting, the height order is:" << endl;
+
+    for(int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
+    return 0;
+}
+```
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
