@@ -90,6 +90,7 @@ int main()
 } 
 ```
 -------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 
 
 
@@ -203,6 +204,7 @@ int main()
 }
 ```
 ---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 
 ## 3.Ashok is learning about doubly linked lists. He wants to write a program to insert a node in the middle of a doubly linked list.
 
@@ -311,4 +313,231 @@ int main()
     return 0;
 }
 ```
+-------------------------------------------------
 --------------------------------------------------------
+## 4. Imagine you are working as a librarian in a large library. The library uses an automated system to keep track of book positions on the shelves. Each book is assigned a unique ID, but some IDs are more common than others due to the popularity of certain editions.
+
+
+
+The system logs the positions of books in a sorted list based on their IDs. You need to find the first and last positions of a specific book ID in this sorted list using recursive binary search.
+
+
+
+Example
+
+Input:
+
+10 
+
+1 2 2 2 2 3 4 8 8 8 
+
+8
+
+
+
+Output:
+
+7 9
+
+
+
+Explanation:
+
+The first and last positions of book ID 8 are [7, 9] since the index is 0-based.
+
+Input format :
+The first line of input consists of an integer n, representing the total number of book IDs.
+
+The second line consists of a sorted list of n integers representing the book IDs.
+
+The third line consists of an integer x, representing the specific book ID to find.
+
+Output format :
+The output displays indexes of the first and last occurrence of x, as space-separated integers.
+
+If book ID x is not present in the shelves, print "NO OCCURRENCES".
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The given test cases fall under the following specifications:
+
+1 ≤ n ≤ 20
+
+1 ≤ book ID, x ≤ 100
+## Sample Test Cases
+
+
+| Input | Output |
+| :--- | :--- |
+| **10**<br>`1 2 2 2 2 3 4 8 8 8`<br>**8** | `7 9` |
+| **10**<br>`1 2 2 2 2 3 4 8 8 8`<br>**5** | `NO OCCURRENCES` |
+
+----
+
+```
+#include <iostream>
+using namespace std;
+
+int firstOcc(int arr[], int low, int high, int x)
+{
+    if(low > high)
+        return -1;
+
+    int mid = (low + high) / 2;
+
+    if(arr[mid] == x)
+    {
+        if(mid == 0 || arr[mid-1] != x)
+            return mid;
+        else
+            return firstOcc(arr, low, mid-1, x);
+    }
+    else if(arr[mid] > x)
+        return firstOcc(arr, low, mid-1, x);
+    else
+        return firstOcc(arr, mid+1, high, x);
+}
+
+int lastOcc(int arr[], int low, int high, int x, int n)
+{
+    if(low > high)
+        return -1;
+
+    int mid = (low + high) / 2;
+
+    if(arr[mid] == x)
+    {
+        if(mid == n-1 || arr[mid+1] != x)
+            return mid;
+        else
+            return lastOcc(arr, mid+1, high, x, n);
+    }
+    else if(arr[mid] > x)
+        return lastOcc(arr, low, mid-1, x, n);
+    else
+        return lastOcc(arr, mid+1, high, x, n);
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int arr[20];
+
+    for(int i=0;i<n;i++)
+        cin >> arr[i];
+
+    int x;
+    cin >> x;
+
+    int first = firstOcc(arr,0,n-1,x);
+    int last = lastOcc(arr,0,n-1,x,n);
+
+    if(first == -1)
+        cout<<"NO OCCURRENCES";
+    else
+        cout<<first<<" "<<last;
+
+    return 0;
+}
+```
+--------------------------------------------------------------------------------------
+---------------------------------------------------
+## 5.Tom is working in a warehouse inventory system, where the item IDs are assigned sequentially in ascending order. 
+
+
+
+He wants to develop a program using recursive binary search to efficiently determine the closest item ID that is less than or equal to a given target ID. 
+
+
+
+The program takes the total number of items and their sorted IDs as input, assisting warehouse staff in quickly identifying the closest available item less than or equal to the target ID. Help Tom in this program.
+
+Input format :
+The first line of input consists of an integer N, representing the number of items in the warehouse.
+
+The second line consists of N space-separated integers, representing the sorted list of item IDs.
+
+The third line consists of an integer representing the target item ID.
+
+Output format :
+The output prints "The closest item ID less than or equal to X is Y", where X is the target ID and Y is the closest item ID less than or equal to X.
+
+If no such element exists, print "No closest item with an ID less than or equal to X exists in the warehouse", where X is the target ID.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+In this scenario, the test cases fall under the following constraints:
+
+1 ≤ N ≤ 10
+
+1 ≤ item ID ≤ 100
+
+## Sample Test Cases
+
+
+| Case | Input | Output |
+| :--- | :--- | :--- |
+| **1** | **7**<br>`17 25 38 47 51 62 79`<br>**50** | The closest item ID less than or equal to 50 is **47** |
+| **2** | **6**<br>`41 52 58 61 65 72`<br>**65** | The closest item ID less than or equal to 65 is **65** |
+| **3** | **5**<br>`12 15 24 25 35`<br>**10** | No closest item with an ID less than or equal to 10 exists in the warehouse |
+
+----
+
+```
+#include <iostream>
+using namespace std;
+
+int findClosest(int arr[], int low, int high, int x)
+{
+    if(low > high)
+        return -1;
+
+    int mid = (low + high) / 2;
+
+    if(arr[mid] == x)
+        return arr[mid];
+
+    if(arr[mid] > x)
+        return findClosest(arr, low, mid - 1, x);
+
+    int temp = findClosest(arr, mid + 1, high, x);
+
+    if(temp <= x && temp != -1)
+        return temp;
+    else
+        return arr[mid];
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int arr[10];
+
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    int target;
+    cin >> target;
+
+    int result = findClosest(arr, 0, n - 1, target);
+
+    if(result == -1)
+        cout << "No closest item with an ID less than or equal to " << target << " exists in the warehouse";
+    else
+        cout << "The closest item ID less than or equal to " << target << " is " << result;
+
+    return 0;
+}
+```
+---------------------------------------
+-----------------------------------------
