@@ -46,7 +46,8 @@ Code constraints :
 
 ---
 Solution:
-```#include <iostream>
+```
+#include <iostream>
 using namespace std;
 
 int main()
@@ -94,3 +95,117 @@ int main()
 } 
 ```
 -------------------------------------------------------------------------------------
+
+
+
+
+## 2.In modern operating systems, multiple applications run concurrently and are managed efficiently. A Circular Linked List (CLL) is an effective data structure that can be used to organize and iterate over these running applications in a cyclic manner.
+
+
+
+Write a program to implement a Circular Linked List that stores the names of currently running applications. The program should accept application names as input and allow iteration over them. If no applications are provided, it should indicate that there are no running applications.
+
+Input format :
+The input consists of multiple lines, each containing the name of an application.
+
+The input continues until the user enters "exit", which signals the end of input.
+
+
+
+Refer to the sample input for a better understanding.
+
+Output format :
+The first line of output prints "Circular Linked List - Running Applications"
+
+If applications were added:
+
+The next line prints "Running Applications:"
+Followed by each application name on a new line in the order they were added.
+If no applications were added before typing exit:
+
+It directly prints "No applications to iterate."
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The given test cases fall under the following constraints:
+
+Each application name is a string with a maximum length of 100 characters.
+
+## Sample Test Cases
+
+
+| Case | Input | Output |
+| :--- | :--- | :--- |
+| **1** | `Microsoft Office Suite`<br>`Adobe Creative Cloud`<br>`Google Chrome`<br>`Mozilla Firefox`<br>`VLC Media Player`<br>`Skype`<br>`exit` | **Circular Linked List - Running Applications**<br>Running Applications:<br>`Microsoft Office Suite`<br>`Adobe Creative Cloud`<br>`Google Chrome`<br>`Mozilla Firefox`<br>`VLC Media Player`<br>`Skype` |
+| **2** | `exit` | **Circular Linked List - Running Applications**<br>No applications to iterate. |
+
+----
+
+```#include <iostream>
+#include <string>
+using namespace std;
+
+struct Node
+{
+    string data;
+    Node* next;
+};
+
+int main()
+{
+    Node* head = NULL;
+    Node* temp = NULL;
+
+    string app;
+
+    while(true)
+    {
+        getline(cin, app);
+
+        if(app == "exit")
+            break;
+
+        Node* newNode = new Node;
+        newNode->data = app;
+
+        if(head == NULL)
+        {
+            head = newNode;
+            newNode->next = head;
+            temp = head;
+        }
+        else
+        {
+            temp->next = newNode;
+            newNode->next = head;
+            temp = newNode;
+        }
+    }
+
+    cout << "Circular Linked List - Running Applications" << endl;
+
+    if(head == NULL)
+    {
+        cout << "No applications to iterate." << endl;
+    }
+    else
+    {
+        cout << "Running Applications:" << endl;
+
+        Node* current = head;
+
+        do
+        {
+            cout << current->data << endl;
+            current = current->next;
+        }
+        while(current != head);
+    }
+
+    return 0;
+}
+```
+---------------------------------------------------------------------------------------
+
