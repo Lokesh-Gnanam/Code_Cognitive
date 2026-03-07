@@ -204,3 +204,111 @@ int main()
 ```
 ---------------------------------------------------------------------------------------
 
+## 3.Ashok is learning about doubly linked lists. He wants to write a program to insert a node in the middle of a doubly linked list.
+
+As his friend, you have to guide Ashok in the program.
+
+Input format :
+The first line of input consists of an integer n, indicating the number of elements to be added to the doubly linked list.
+
+The second line consists of n integers to be added to the doubly linked list.
+
+The third line consists of an integer m, indicating the integer to be added in the middle of the doubly linked list.
+
+Output format :
+The output prints the updated linked list after inserting the element in the middle of the list.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 ≤ n ≤ 30 (The value of n will be even)
+
+1 ≤ list elements ≤ 105
+
+## Sample Test Cases
+
+
+| Input | Output |
+| :--- | :--- |
+| **4**<br>`1 2 3 4`<br>**7** | `1 2 7 3 4` |
+| **6**<br>`1 2 3 4 5 6`<br>**9** | `1 2 3 9 4 5 6` |
+
+------
+
+```
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node* prev;
+    Node* next;
+};
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    Node* head = NULL;
+    Node* temp = NULL;
+
+    for(int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+
+        Node* newNode = new Node;
+        newNode->data = x;
+        newNode->prev = NULL;
+        newNode->next = NULL;
+
+        if(head == NULL)
+        {
+            head = newNode;
+            temp = head;
+        }
+        else
+        {
+            temp->next = newNode;
+            newNode->prev = temp;
+            temp = newNode;
+        }
+    }
+
+    int m;
+    cin >> m;
+
+    int pos = n / 2;
+
+    Node* current = head;
+
+    for(int i = 1; i < pos; i++)
+    {
+        current = current->next;
+    }
+
+    Node* newNode = new Node;
+    newNode->data = m;
+
+    newNode->next = current->next;
+    newNode->prev = current;
+
+    current->next->prev = newNode;
+    current->next = newNode;
+
+    Node* display = head;
+
+    while(display != NULL)
+    {
+        cout << display->data << " ";
+        display = display->next;
+    }
+
+    return 0;
+}
+```
+--------------------------------------------------------
