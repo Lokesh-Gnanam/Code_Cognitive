@@ -541,3 +541,61 @@ int main()
 ```
 ---------------------------------------
 -----------------------------------------
+
+## 6.On the first day of school, students randomly take seats in class. Since taller students are sitting in front of shorter ones, some students can't see the board properly.
+
+
+
+To fix this, the teacher asks the students to stand in a line and arranges them in increasing order of height using the Selection Sort technique.
+
+
+
+She follows this method:
+
+
+
+From the current position to the end of the line, she finds the shortest student.
+Then she swaps that student with the one currently at the position.
+She repeats this process for all students.
+
+
+Write a program that sorts the heights of students using Selection Sort.
+
+Input format :
+The first line of input contains an integer n, the number of students.
+
+The second line of input contains n space-separated integers representing the heights of the students.
+
+Output format :
+The first line of the output prints "Students' height order before sorting:"
+
+The second line prints the heights of the students as they were input, separated by spaces.
+
+For each iteration of the sorting process (from 1 to n-1), the following two lines are printed:
+
+A line those prints "At the end of iteration X:" where X is the current iteration number.
+
+The next line prints the current state of the array (heights after that iteration), space separated.
+
+After all sorting iterations, the next line prints "After sorting, the height order is:"
+
+The final line prints the sorted list of student heights in ascending order, space separated.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The given testcases fall under the following constraints:
+
+1 ≤ elements of array ≤ 104
+
+## Sample Test Cases
+
+
+| Case | Input | Output |
+| :--- | :--- | :--- |
+| **1** | **5**<br>`170 168 154 178 166` | **Students' height order before sorting:**<br>`170 168 154 178 166`<br>**At the end of iteration 1:**<br>`154 168 170 178 166`<br>**At the end of iteration 2:**<br>`154 166 170 178 168`<br>**At the end of iteration 3:**<br>`154 166 168 178 170`<br>**At the end of iteration 4:**<br>`154 166 168 170 178`<br>**After sorting, the height order is:**<br>`154 166 168 170 178` |
+| **2** | **10**<br>`132 129 144 177 148 134 157 133 183 155` | **Students' height order before sorting:**<br>`132 129 144 177 148 134 157 133 183 155`<br>**...** (iterations 1-9) ...<br>**After sorting, the height order is:**<br>`129 132 133 134 144 148 155 157 177 183` |
+
+----------
