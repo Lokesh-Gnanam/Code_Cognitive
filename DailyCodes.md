@@ -774,43 +774,38 @@ int main() {
     cin >> n;
 
     vector<int> nums(n);
-
-    for(int i = 0; i < n; i++) {
+    for(int i=0;i<n;i++)
         cin >> nums[i];
-    }
 
     int m;
     cin >> m;
 
     vector<int> customers(m);
-
-    for(int i = 0; i < m; i++) {
+    for(int i=0;i<m;i++)
         cin >> customers[i];
-    }
 
-    // items and customers sort pannrom
-    sort(nums.begin(), nums.end());
-    sort(customers.begin(), customers.end());
+    int served = 0;
 
-    int i = 0, j = 0;
-    int count = 0;
+    for(int i=0;i<m;i++) {
 
-    // greedy matching
-    while(i < n && j < m) {
+        int idx = -1;
+        int best = 1e9;
 
-        if(nums[i] >= customers[j]) {
-            // customer serve pannalam
-            count++;
-            i++;
-            j++;
+        for(int j=0;j<n;j++) {
+
+            if(nums[j] >= customers[i] && nums[j] < best) {
+                best = nums[j];
+                idx = j;
+            }
         }
-        else {
-            // item small so next item try
-            i++;
+
+        if(idx != -1) {
+            nums[idx] -= customers[i]; // quantity reduce
+            served++;
         }
     }
 
-    cout << "Maximum number of customers served: " << count;
+    cout << "Maximum number of customers served: " << served;
 
     return 0;
 }
