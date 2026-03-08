@@ -653,15 +653,172 @@ int main()
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 
+## 7.You are given an array nums of positive integers representing the quantities of items available in a store. Each index i in the array represents a different item, and the value nums[i] represents the quantity of that item.
 
 
 
+You need to serve customers who arrive at your store one by one. Each customer demands a specific quantity of items. If you have enough quantity of the requested item, you will serve the customer and reduce the quantity of that item by the requested amount. If you don't have enough quantity of the requested item, you will skip that customer and move on to the next one.
 
 
 
+Your goal is to determine the total number of customers you can serve while optimizing the remaining items in the store.
 
 
 
+Write a function that takes the array nums representing the initial quantities of items and an array of customers representing the quantities of items each customer demands. The function should return the maximum number of customers that can be served while ensuring that the remaining quantities of items in the store are minimized.
+
+
+
+Example
+
+Sample Input1 
+
+4
+
+5 10 8 6
+
+3
+
+7 5 12
+
+Sample Output 1
+
+Maximum number of customers served: 2
+
+Explanation
+
+Customer 1 demands 7, and an item with quantity 6 can be served.
+
+Customer 2 demands 5, and an item with quantity 5 can be served.
+
+Customer 3 demands 12, but no item can be served, so skipped.
+
+Only 2 customers can be served.
+
+
+
+Sample Input 2
+
+6
+
+10 15 20 5 8 18
+
+3
+
+8 12 5
+
+Output
+
+Maximum number of customers served: 3
+
+Explanation
+
+Customer 1 demands 8, and an item with quantity 8 can be served.
+
+Customer 2 demands 12, and items with quantities 10 and 5 can be served.
+
+Customer 3 demands 5, and an item with quantity 5 can be served.
+
+All 3 customers can be served.
+
+Input format :
+The first line contains an integer n representing the number of items in the store.
+
+The second line contains n space-separated integers representing the initial quantities of items.
+
+The third line contains an integer m represents the number of customers.
+
+The fourth line contains m space-separated integers representing the quantities of items each customer demands.
+
+Output format :
+The output returns the maximum number of customers that can be served while optimizing the remaining quantities of items in the store.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The quantities of items in both arrays are positive integers.
+
+2 ≤ n, m ≤ 10
+1 ≤ nums[i], customers[i] ≤ 30
+
+
+Hidden Test Case Design (Extreme Value Coverage)
+
+Hidden test cases include boundary values from the given constraint range to ensure robustness and full validation.
+
+Minimum number of items and customers: n = 2, m = 2
+Maximum number of items and customers: n = 10, m = 10
+Minimum quantity value: 1
+Maximum quantity value: 30
+
+### **Sample Test Cases**
+
+| Test Case | Input Data | Output |
+| :--- | :--- | :--- |
+| **Case 1** | **Inventory Size:** 4<br>**Inventory:** `5 10 8 6`<br>**Requests Size:** 3<br>**Requests:** `7 5 12` | `Maximum number of customers served: 2` |
+| **Case 2** | **Inventory Size:** 6<br>**Inventory:** `10 15 20 5 8 18`<br>**Requests Size:** 3<br>**Requests:** `8 12 5` | `Maximum number of customers served: 3` |
+
+---
+
+```
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+
+    int n;
+    cin >> n;
+
+    vector<int> nums(n);
+
+    for(int i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+
+    int m;
+    cin >> m;
+
+    vector<int> customers(m);
+
+    for(int i = 0; i < m; i++) {
+        cin >> customers[i];
+    }
+
+    // items and customers sort pannrom
+    sort(nums.begin(), nums.end());
+    sort(customers.begin(), customers.end());
+
+    int i = 0, j = 0;
+    int count = 0;
+
+    // greedy matching
+    while(i < n && j < m) {
+
+        if(nums[i] >= customers[j]) {
+            // customer serve pannalam
+            count++;
+            i++;
+            j++;
+        }
+        else {
+            // item small so next item try
+            i++;
+        }
+    }
+
+    cout << "Maximum number of customers served: " << count;
+
+    return 0;
+}
+```
+--------------------------------------
+--------------------------------------
+
+## 8.
 
 
 
