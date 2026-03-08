@@ -813,7 +813,149 @@ int main() {
 --------------------------------------
 --------------------------------------
 
-## 8.
+## 8.Shreya has an array of integers and needs to perform a series of operations to maximize the value of the array after merging its elements. The merging process is defined as follows:
+
+
+
+If i and j are two indices of the array (i ≠ j), merging the jth element into the ith element makes a[i] become a[i] - a[j] and remove a[j] from the array.
+
+
+
+Depending on the nature of the array (positive, negative, or mixed), specific rules apply to maximize the resulting value:
+
+If the array contains both positive and negative elements, then add absolute value to all elements of the array.
+If the array contains only positive elements, subtract the smallest element from the sum of all elements.
+If the array contains only negative elements, replace all elements with their absolute values and subtract the smallest element from the sum of all elements.
+
+
+Write a program to calculate the maximum possible value of the array after applying these operations.
+
+
+
+Example
+
+Sample Input 1
+
+4
+
+2 1 2 1
+
+Sample Output 1 
+
+4
+
+Explanation
+
+Merge the 3rd element into the 2nd element, then the array becomes {2, -1, 1}.
+
+Merge the 3rd element into the 2nd element, then the array becomes {2, -2}.
+
+Merge the 2nd element into the 1st element, then the array becomes {4}.
+
+The maximum possible value after merging is 4.
+
+
+
+
+
+Sample Input 2 
+
+5
+
+1 3 5 -2 -6
+
+Sample Output 2
+
+17
+
+Explanation
+
+Merge the 4th element into the 3rd element, then the array becomes {1, 3, -7, -6}.
+
+Merge the 2nd element into the 3rd element, then the array becomes {1, -10, -6}.
+
+Merge the 2nd element into the 1st element, then the array becomes {11, -6}.
+
+Merge the 2nd element into the 1st element, then the array becomes {17}.
+
+The maximum possible value after merging is 17.
+
+Input format :
+The first line of input consists of an integer N, representing the size of the array.
+
+The second line consists of N space-separated integers, representing the elements of the array.
+
+Output format :
+The output prints the maximum possible value after merging elements in the array.
+
+
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+1 ≤ N ≤ 10
+
+-20 ≤ array elements ≤ 21
+
+### Sample Test Cases
+
+| Test Case | Input | Output |
+| :--- | :--- | :--- |
+| **Case 1** | `4`<br>`2 1 2 1` | `4` |
+| **Case 2** | `5`<br>`1 3 5 -2 -6` | `17` |
+| **Case 3** | `3`<br>`-5 0 5` | `10` |
+
+---
+
+```
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+
+    bool hasPos = false, hasNeg = false;
+
+    for(int i=0;i<n;i++) {
+        cin >> a[i];
+
+        if(a[i] > 0) hasPos = true;
+        if(a[i] < 0) hasNeg = true;
+    }
+
+    int sum = 0;
+    int mn = 1e9;
+
+    for(int i=0;i<n;i++) {
+        sum += abs(a[i]);
+        mn = min(mn, abs(a[i]));
+    }
+
+    int ans;
+
+    if(hasPos && hasNeg) {
+        ans = sum;
+    }
+    else {
+        ans = sum - 2*mn;
+    }
+
+    cout << ans;
+
+    return 0;
+}
+```
+
+---------------------------
+---------------------------
+
+## 9.
 
 
 
