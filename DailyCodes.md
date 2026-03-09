@@ -41,7 +41,7 @@ Code constraints :
 
 ---
 Solution:
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -139,7 +139,8 @@ Each application name is a string with a maximum length of 100 characters.
 
 ----
 
-```#include <iostream>
+```cpp
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -239,7 +240,7 @@ Code constraints :
 
 ------
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -377,7 +378,7 @@ The given test cases fall under the following specifications:
 
 ----
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -491,7 +492,7 @@ In this scenario, the test cases fall under the following constraints:
 
 ----
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -600,7 +601,7 @@ The given testcases fall under the following constraints:
 
 ----------
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -762,7 +763,7 @@ Maximum quantity value: 30
 
 ---
 
-```
+```cpp
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -907,7 +908,7 @@ Code constraints :
 
 ---
 
-```
+```cpp
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -970,7 +971,7 @@ Refer to the sample input and output for specifications.
 | **1** | `3` (Size)<br>`1, 2, 3`<br>`4, 5, 6`<br>`7, 8, 9` | 1 2 3<br>4 5 6<br>7 8 9 | 1 4 7<br>2 5 8<br>3 6 9 |
 | **2** | `2` (Size)<br>`1, 5`<br>`9, 8` | 1 5<br>9 8 | 1 9<br>5 8 |
 -------------
-```
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -1040,7 +1041,7 @@ Refer sample output for details.
 | **2** | `3` | `1, 2, 3` | `1, 2, 3` | 2, 4, 6 |
 -----------------
 
-```
+```cpp
 #include <iostream>
 using namespace std;
 
