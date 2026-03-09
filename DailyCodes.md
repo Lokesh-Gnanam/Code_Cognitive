@@ -1010,8 +1010,35 @@ int main() {
 ```
 ------------------------------------
 ------------------------------------
-## 10.
+## 10.Problem Statement :
 
+
+
+Sum of 2 arrays
+
+
+
+Ramu has some number of Apples and he arranges that in a matrix format. Raju has another number of Apples. He also wants to arrange that in a matrix format. Ragul wants to calculate the total number of apples. Help him to find out the total number of apples.
+
+Input format :
+Input consists of 2n+1 integers.
+
+The first integer corresponds to ‘n’, the size of the array.
+
+The next ‘n’ integers correspond to the elements in the first array.
+
+The last 'n' integers correspond to the elements in the second array. Assume that the maximum value of n is 15.
+
+Output format :
+The output consists of the sum of 2 arrays.
+
+Refer sample output for details.
+
+| Case | Size ($N$) | Vector A | Vector B | Output (A + B) |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `5` | `2, 3, 6, 8, 1` | `1, 1, 1, 1, 1` | 3, 4, 7, 9, 2 |
+| **2** | `3` | `1, 2, 3` | `1, 2, 3` | 2, 4, 6 |
+-----------------
 
 
 
