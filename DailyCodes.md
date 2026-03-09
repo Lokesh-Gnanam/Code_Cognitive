@@ -955,7 +955,22 @@ int main() {
 ---------------------------
 ---------------------------
 
-## 9.
+## 9.Sheldon Cooper has a square-shaped puzzle made up of small square pieces containing numbers on them. He wants to rearrange the puzzle by changing the elements of a row into a column element and the column element into a row element without altering the shape of the puzzle. Help Sheldon solves this puzzle. Write a program to find the transpose of the given 2D matrix.
+
+Input format :
+Refer to the sample input and output for specifications.
+
+Output format :
+The output prints the given matrix and transposed matrix.
+
+Refer to the sample input and output for specifications.
+
+| Case | Input | Original Matrix | Transposed Matrix |
+| :--- | :--- | :--- | :--- |
+| **1** | `3` (Size)<br>`1, 2, 3`<br>`4, 5, 6`<br>`7, 8, 9` | 1 2 3<br>4 5 6<br>7 8 9 | 1 4 7<br>2 5 8<br>3 6 9 |
+| **2** | `2` (Size)<br>`1, 5`<br>`9, 8` | 1 5<br>9 8 | 1 9<br>5 8 |
+-------------
+
 
 
 
