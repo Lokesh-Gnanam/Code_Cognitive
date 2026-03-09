@@ -970,7 +970,47 @@ Refer to the sample input and output for specifications.
 | **1** | `3` (Size)<br>`1, 2, 3`<br>`4, 5, 6`<br>`7, 8, 9` | 1 2 3<br>4 5 6<br>7 8 9 | 1 4 7<br>2 5 8<br>3 6 9 |
 | **2** | `2` (Size)<br>`1, 5`<br>`9, 8` | 1 5<br>9 8 | 1 9<br>5 8 |
 -------------
+```
+#include <iostream>
+using namespace std;
 
+int main() {
+    int n;
+    cin >> n;
+
+    int a[n][n];
+
+    // Input matrix
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    // Print original matrix
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "Transpose matrix is:" << endl;
+
+    // Print transpose
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cout << a[j][i] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+```
+------------------------------------
+------------------------------------
+## 10.
 
 
 
