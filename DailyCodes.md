@@ -1040,8 +1040,42 @@ Refer sample output for details.
 | **2** | `3` | `1, 2, 3` | `1, 2, 3` | 2, 4, 6 |
 -----------------
 
+```
+#include <iostream>
+using namespace std;
 
+int main()
+{
+    int n;
+    cin >> n;
 
+    int a[15], b[15];
+
+    // first array input
+    for(int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    // second array input
+    for(int i = 0; i < n; i++)
+    {
+        cin >> b[i];
+    }
+
+    // sum of arrays
+    for(int i = 0; i < n; i++)
+    {
+        cout << a[i] + b[i] << endl;
+    }
+
+    return 0;
+}
+```
+----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
+
+## 11.
 
 
 
