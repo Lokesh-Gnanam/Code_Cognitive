@@ -1076,7 +1076,147 @@ int main()
 ----------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------
 
-## 11.
+## 11.Professor Arjun teaches at a college where each student appears for 3 internal assessments. He wants to analyze the performance of students based on their scores stored in a 2D array. Each row in the array represents a student, and each column represents their marks in the 3 assessments.
 
+Professor Arjun needs your help to:
+
+Calculate the average marks for each student.
+Identify the top scorer (student with the highest total).
+Find the number of students who scored above a given threshold in all 3 assessments.
+Example:
+
+Consider there are 2 students in the class.
+
+Student 1 scored 70, 75, and 80 in the three assessments.
+
+Student 2 scored 50, 60, and 55 in the three assessments.
+
+The threshold mark is 60.
+
+First, we calculate the average marks for each student:
+
+Student 1 → Average = 75.0
+
+Student 2 → Average = 55.0
+
+Next, we find the top scorer:
+
+Student 1 has a total of 225 marks, which is higher than Student 2’s total of 165 marks.
+
+Therefore, Student 1 is the top scorer.
+
+Finally, we check how many students scored above the threshold in all three assessments:
+
+Student 1 scored above 60 in all subjects.
+
+Student 2 has at least one score below 60.
+
+So, only 1 student meets this criterion.
+
+Output:
+
+Student 1: 75.0
+
+Student 2: 55.0
+
+Top scorer: Student 1 with total 225
+
+Number of students who scored above threshold in all assessments: 1
+
+
+
+Input format :
+The first line of input consists of an integer n, representing the number of students.
+
+The next n lines each consist of 3 integers, separated by space, representing the marks obtained in 3 assessments by a student.
+
+The last line of input consists of an integer threshold, representing the minimum mark a student must score in each assessment to be considered above threshold.
+
+
+
+Output format :
+The first n lines of output should display the average marks of each student (rounded to 1 decimal place) in the format:
+
+Student <student_number>: <average_marks>
+
+The next n line of output consists of the name of the top scorer String and their total score, in the format:
+
+Top scorer: <Student name> with total <total score>
+
+The last line of output consists of the number of students who scored above the threshold in all assessments in the format:
+
+<Number of students who scored above threshold in all assessments:><value>
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 ≤ n ≤ 1000
+
+1 ≤ m ≤ 100
+
+0 ≤ score ≤ 100
+
+0 ≤ threshold ≤ 100
+
+| Case | No. of Students | Student Scores (3 Assessments each) | Threshold | Student Averages | Top Scorer | Above Threshold (All) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | `2` | **S1:** 70, 75, 80<br>**S2:** 50, 60, 55 | `60` | **S1:** 75.0<br>**S2:** 55.0 | Student 1 (Total: 225) | 1 |
+| **2** | `2` | **S1:** 0, 0, 0<br>**S2:** 0, 0, 0 | `50` | **S1:** 0.0<br>**S2:** 0.0 | Student 1 (Total: 0) | 0 |
+| **3** | `3` | **S1:** 80, 90, 85<br>**S2:** 90, 85, 80<br>**S3:** 70, 70, 70 | `75` | **S1:** 85.0<br>**S2:** 85.0<br>**S3:** 70.0 | Student 1 (Total: 255) | 2 |
+
+---------------------
+
+```
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int marks[n][3];
+    int total[n];
+    
+    for(int i = 0; i < n; i++) {
+        total[i] = 0;
+        for(int j = 0; j < 3; j++) {
+            cin >> marks[i][j];
+            total[i] += marks[i][j];
+        }
+    }
+
+    int threshold;
+    cin >> threshold;
+
+    int topIndex = 0;
+    int count = 0;
+
+    for(int i = 0; i < n; i++) {
+        double avg = total[i] / 3.0;
+        cout << "Student " << i+1 << ": " << fixed << setprecision(1) << avg << endl;
+
+        if(total[i] > total[topIndex]) {
+            topIndex = i;
+        }
+
+        if(marks[i][0] > threshold && marks[i][1] > threshold && marks[i][2] > threshold) {
+            count++;
+        }
+    }
+
+    cout << "Top scorer: Student " << topIndex+1 << " with total " << total[topIndex] << endl;
+
+    cout << "Number of students who scored above threshold in all assessments: " << count;
+
+    return 0;
+}
+```
+----------------------------------------------
+----------------------------------------------
+
+## 12. 
 
 
