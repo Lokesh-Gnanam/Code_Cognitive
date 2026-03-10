@@ -1168,7 +1168,7 @@ Code constraints :
 
 ---------------------
 
-```
+```cpp
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -1217,6 +1217,108 @@ int main() {
 ----------------------------------------------
 ----------------------------------------------
 
-## 12. 
+## 12. Write a program to obtain a matrix and find the sum of the elements in the upper triangular matrix (i.e., the elements on the diagonal and the upper elements).
+
+Example:
+
+Input
+
+3
+
+3
+
+12 23 45
+
+56 78 89
+
+95 51 20
 
 
+
+Explanation
+
+Row 1: 12 + 23 + 45 = 80
+
+Row 2: 78 + 89 = 167
+
+Row 3: 20 = 20
+
+Adding these totals together: 80 + 167 + 20 = 267
+
+
+
+Output
+
+267
+
+
+
+Note: The matrix should be a square matrix only.
+
+Input format :
+The first line of the input consists of r, representing the number of rows of the square matrix.
+
+The second line of the input consists of c, which representing the number of columns of the square matrix.
+
+The next r lines of input consist of c elements of the matrix, separated by spaces.
+
+Output format :
+The output prints the sum of the upper triangular matrix.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The matrix should be a square matrix.
+
+2 ≤ r, c ≤ 10
+
+| Case | Matrix Size ($N \times N$) | Matrix Elements | Calculation Logic | Output |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `3 x 3` | `6 5 4`<br>`1 2 5`<br>`7 9 7` | Sum of Diagonals / Elements | **29** |
+| **2** | `3 x 3` | `12 23 45`<br>`56 78 89`<br>`95 51 20` | Sum of Diagonals / Elements | **267** |
+
+---------------------
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int r, c;
+    cin >> r;
+    cin >> c;
+
+    int matrix[10][10];
+    int sum = 0;
+
+    for(int i = 0; i < r; i++)
+    {
+        for(int j = 0; j < c; j++)
+        {
+            cin >> matrix[i][j];
+        }
+    }
+
+    for(int i = 0; i < r; i++)
+    {
+        for(int j = 0; j < c; j++)
+        {
+            if(j >= i)
+            {
+                sum += matrix[i][j];
+            }
+        }
+    }
+
+    cout << sum;
+
+    return 0;
+}
+```
+-------------------------------------
+-------------------------------------
+
+## 13.
