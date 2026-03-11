@@ -1410,4 +1410,38 @@ int main() {
 --------------------------------------
 --------------------------------------
 
-## 14.
+## 14.Anisha is working on a project where she needs to merge two strings character by character alternately. She wants to create a program to accomplish this task efficiently.
+
+
+
+Help her by writing a program that takes two strings as input and merges them alternately character by character.
+
+Input format :
+The input consists of two strings in separate lines.
+
+Output format :
+The output prints a single string representing the result of merging the two input strings alternately character by character. If one string is longer than the other, append the remaining characters from the longer string at the end of the merged string.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 ≤ |s1|, |s2| ≤ 100
+
+The strings contain alphanumeric characters and special symbols.
+
+| Case | String A | String B | Interleaved Output |
+| :--- | :--- | :--- | :--- |
+| **1** | `hello` | `world` | `hweolrllod` |
+| **2** | `beautiful` | `sunset` | `bseuanusteitful` |
+| **3** | `loud` | `thunder` | `ltohuudnder` |
+| **4** | `abc@123` | `xyz` | `axbycz@123` |
+
+```cpp
+
+```
+------------------------------------------------
+------------------------------------------------
+
+## 15.
