@@ -1355,7 +1355,12 @@ In this scenario, the given test cases will fall under the following constraints
 1 ≤ n ≤ 7
 
 1 ≤ array elements ≤ 250
-
+| Case | Size ($N$) | Input Array | Unique Elements | Logic Result | Output |
+| :--- : | :--- : | :--- | :--- : | :--- | :--- : |
+| **1** | `5` | `55, 52, 52, 49, 52` | `55, 52, 49` | Has duplicates | `YES 3` |
+| **2** | `5` | `1, 1, 1, 1, 1` | `1` | All same | `YES 0` |
+| **3** | `3` | `1, 2, 3` | `1, 2, 3` | Sequence check | `YES 1` |
+| **4** | `6` | `10, 20, 30, 40, 50, 60` | `All` | No duplicates | `NO` |
 
 
 ```cpp
@@ -1405,4 +1410,4 @@ int main() {
 --------------------------------------
 --------------------------------------
 
-##
+## 14.
