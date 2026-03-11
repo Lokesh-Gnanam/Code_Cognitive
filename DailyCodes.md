@@ -1439,7 +1439,34 @@ The strings contain alphanumeric characters and special symbols.
 | **4** | `abc@123` | `xyz` | `axbycz@123` |
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+int main()
+{
+    string s1, s2;
+    cin >> s1;
+    cin >> s2;
+
+    string result = "";
+
+    int n1 = s1.length();
+    int n2 = s2.length();
+    int maxLen = max(n1, n2);
+
+    for(int i = 0; i < maxLen; i++)
+    {
+        if(i < n1)
+            result += s1[i];
+
+        if(i < n2)
+            result += s2[i];
+    }
+
+    cout << result;
+
+    return 0;
+}
 ```
 ------------------------------------------------
 ------------------------------------------------
