@@ -1321,4 +1321,88 @@ int main()
 -------------------------------------
 -------------------------------------
 
-## 13.
+## 13.Find whether it is possible to make array elements same using one external number.
+
+
+
+Given an Array, three operations can be performed using any external number x.
+
+
+
+Add x to an element once
+Subtract x from an element once
+Perform no operation on the element
+Count of unique elements is 1. Answer is YES with x = 0
+Count of unique elements is 2. Answer is YES with x = Difference of two unique elements.
+Count of unique elements is 3.If difference between mid and max is same as difference between mid and min, answer is YES with x = difference between mid and max or mid and min. Otherwise answer is NO.
+Input format :
+The first line of input consists of an integer n, the number of elements in the array.
+
+The second line of input consists of n integers, the elements of the array, space separated.
+
+Output format :
+If it is possible to equalize the array with some integer x, print "YES" followed by the smallest such x.
+
+If there are multiple elements and all are the same, print "YES 0". If it is not possible, print "NO".
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+In this scenario, the given test cases will fall under the following constraints:
+
+1 ≤ n ≤ 7
+
+1 ≤ array elements ≤ 250
+
+
+
+```cpp
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int arr[10];
+    set<int> s;
+
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+        s.insert(arr[i]);
+    }
+
+    if(s.size() == 1) {
+        cout << "YES 0";
+    }
+    else if(s.size() == 2) {
+        int a = *s.begin();
+        int b = *next(s.begin());
+        cout << "YES " << abs(b - a);
+    }
+    else if(s.size() == 3) {
+        auto it = s.begin();
+        int a = *it; it++;
+        int b = *it; it++;
+        int c = *it;
+
+        if((b - a) == (c - b))
+            cout << "YES " << (b - a);
+        else
+            cout << "NO";
+    }
+    else {
+        cout << "NO";
+    }
+
+    return 0;
+}
+```
+
+--------------------------------------
+--------------------------------------
+
+##
