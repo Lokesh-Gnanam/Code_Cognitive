@@ -1662,7 +1662,221 @@ The linked list follows a circular structure, ensuring continuity in task manage
 --------------------
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Node {
+    int data;
+    Node* next;
+};
+
+Node* head = NULL;
+
+// INSERT (beginning la insert pannuvom)
+void insert(int x) {
+
+    Node* newNode = new Node();
+    newNode->data = x;
+
+    if (head == NULL) {
+        newNode->next = newNode;
+        head = newNode;
+    }
+    else {
+        Node* temp = head;
+
+        // last node find pannuvom
+        while (temp->next != head)
+            temp = temp->next;
+
+        newNode->next = head;
+        temp->next = newNode;
+        head = newNode;
+    }
+
+    cout << "Node with data " << x << " inserted." << endl;
+}
+
+
+// BEGIN DELETE
+void beginDelete() {
+
+    if (head == NULL) return;
+
+    Node* temp = head;
+
+    // single node case
+    if (head->next == head) {
+        head = NULL;
+        delete temp;
+    }
+    else {
+        Node* last = head;
+
+        while (last->next != head)
+            last = last->next;
+
+        head = head->next;
+        last->next = head;
+
+        delete temp;
+    }
+
+    cout << "Node at the beginning deleted." << endl;
+}
+
+
+// LAST DELETE
+void lastDelete() {
+
+    if (head == NULL) return;
+
+    Node* temp = head;
+
+    if (head->next == head) {
+        head = NULL;
+        delete temp;
+    }
+    else {
+
+        Node* prev = NULL;
+
+        while (temp->next != head) {
+            prev = temp;
+            temp = temp->next;
+        }
+
+        prev->next = head;
+        delete temp;
+    }
+
+    cout << "Node at the end deleted." << endl;
+}
+
+
+// RANDOM DELETE
+void randomDelete(int x) {
+
+    if (head == NULL) {
+        cout << "Node with data " << x << " not found." << endl;
+        return;
+    }
+
+    Node* temp = head;
+    Node* prev = NULL;
+
+    do {
+        if (temp->data == x) {
+
+            if (prev == NULL) {
+                beginDelete();
+                return;
+            }
+
+            prev->next = temp->next;
+            delete temp;
+
+            cout << "Node with data " << x << " deleted." << endl;
+            return;
+        }
+
+        prev = temp;
+        temp = temp->next;
+
+    } while (temp != head);
+
+    cout << "Node with data " << x << " not found." << endl;
+}
+
+
+// SEARCH
+void search(int x) {
+
+    if (head == NULL) {
+        cout << "Node with data " << x << " not found." << endl;
+        return;
+    }
+
+    Node* temp = head;
+    int pos = 1;
+
+    do {
+        if (temp->data == x) {
+            cout << "Node with data " << x << " found at position " << pos << "." << endl;
+            return;
+        }
+
+        temp = temp->next;
+        pos++;
+
+    } while (temp != head);
+
+    cout << "Node with data " << x << " not found." << endl;
+}
+
+
+// DISPLAY
+void display() {
+
+    if (head == NULL) return;
+
+    Node* temp = head;
+
+    do {
+        cout << temp->data << " ";
+        temp = temp->next;
+    } while (temp != head);
+
+    cout << endl;
+}
+
+
+// MAIN MENU
+int main() {
+
+    int choice, x;
+
+    while (true) {
+
+        cin >> choice;
+
+        switch (choice) {
+
+        case 1:
+            cin >> x;
+            insert(x);
+            break;
+
+        case 2:
+            beginDelete();
+            break;
+
+        case 3:
+            lastDelete();
+            break;
+
+        case 4:
+            cin >> x;
+            randomDelete(x);
+            break;
+
+        case 5:
+            cin >> x;
+            search(x);
+            break;
+
+        case 6:
+            display();
+            break;
+
+        case 7:
+            return 0;
+
+        default:
+            cout << "Invalid choice. Please try again." << endl;
+        }
+    }
+}
 ```
 
 ---------------------------------
