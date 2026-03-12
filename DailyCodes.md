@@ -1587,4 +1587,84 @@ int main() {
 --------------------------------
 --------------------------------
 
-## 16. 
+## 16. Emma is a software engineer managing multiple tasks in a cyclic order. To efficiently track, update, and remove tasks, she needs a Circular Linked List that supports dynamic insertions, deletions (from beginning, end, or specific positions), searching, and displaying tasks. Implement a menu-driven program that allows her to add, remove, find, and display tasks efficiently in a cyclic manner.
+
+
+
+It should be a menu-driven program with the following functions:
+
+insert( )
+beginDelete(),
+lastDelete()
+randomDelete( )
+search(),
+display(),
+exit.
+Input format :
+The first line of input consists of an integer (choice) representing the operation to be performed.
+
+If choice = 1, an integer (taskID) is provided, representing the task to be inserted.
+
+If choice = 2, the first task in the circular linked list is deleted.
+
+If choice = 3, the last task in the circular linked list is deleted.
+
+If choice = 4, an integer (taskID) is provided, representing the specific task to be deleted.
+
+If choice = 5, an integer (taskID) is provided, representing the task to be searched.
+
+If choice = 6, the program displays all tasks in the circular linked list.
+
+If choice = 7, the program terminates.
+
+If choice > 7, print "Invalid choice. Please try again."
+
+Output format :
+If choice = 1, print "Task with ID X inserted."
+
+If choice = 2, print "Task at the beginning deleted."
+
+If choice = 3, print "Task at the end deleted."
+
+If choice = 4, print "Task with ID X deleted." (if found), otherwise "Task with ID X not found."
+
+If choice = 5, print "Task with ID X found at position Y." (if found), otherwise "Task with ID X not found."
+
+If choice = 6, print the task IDs in the circular linked list separated by spaces.
+
+If choice > 7, print "Invalid choice. Please try again."
+
+
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+1 ≤ n ≤ 100 (Number of operations)
+
+1 ≤ taskID ≤ 10⁶ (Each task ID is a unique positive integer)
+
+The linked list follows a circular structure, ensuring continuity in task management
+
+| Case | Operation Sequence | Output Actions | Final List State |
+| :--- | :--- | :--- | :--- |
+| **1** | `1(88), 1(67), 1(54), 1(64), 1(34)` | Inserts 5 nodes at the head | `34 64 54 67 88` |
+| | `6` (Display) | Prints current list | `34 64 54 67 88` |
+| | `5(67)` (Search) | Found at position 4 | — |
+| | `2` (Del Head), `3` (Del Tail) | Deletes `34` and `88` | `64 54 67` |
+| | `1(234)` (Insert Head) | Inserts `234` | `234 64 54 67` |
+| | `4(64)` (Del Value) | Deletes `64` | `234 54 67` |
+| | `6` (Display) | Prints final list | `234 54 67` |
+| **2** | `1(10), 1(20), 1(30)` | Inserts 3 nodes | `30 20 10` |
+| | `5(40)` (Search) | Not Found | — |
+| | `2` (Del Head), `3` (Del Tail) | Deletes `30` and `10` | `20` |
+| | `6` (Display) | Prints final list | `20` |
+
+--------------------
+
+```cpp
+
+```
+
+---------------------------------
+---------------------------------
+## 17.
