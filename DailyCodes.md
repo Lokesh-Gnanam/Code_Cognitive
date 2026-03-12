@@ -1471,4 +1471,39 @@ int main()
 ------------------------------------------------
 ------------------------------------------------
 
-## 15.
+## 15.Emma's ride-sharing application uses a circular linked list to manage drivers' data. When drivers finish their shifts and log out, their data needs to be removed from the beginning of this circular linked list. 
+
+
+
+Your task is to implement a function to delete the node containing the driver's information from the start of the circular list while ensuring the list remains circular and properly linked after the deletion.
+
+Input format :
+The first line of input consists of an integer M, representing the number of drivers.
+
+The second line consists of M space-separated integers, representing the driver data.
+
+Output format :
+The output prints the updated circular linked list after deleting the driver's information from the beginning of the list.
+
+
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+In this scenario, given test cases will fall under the following constraints:
+
+1 ≤ M ≤ 10
+
+1 ≤ driver data ≤ 100
+
+| Case | Array Size ($N$) | Input Array | Output (Skip First) |
+| :--- | :--- | :--- | :--- |
+| **1** | `5` | `23, 45, 67, 41, 89` | `45 67 41 89` |
+| **2** | `8` | `13, 24, 45, 67, 50, 24, 30, 90` | `24 45 67 50 24 30 90` |
+
+-----------------------------
+```cpp
+
+```
+--------------------------------
+--------------------------------
