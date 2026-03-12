@@ -1503,7 +1503,88 @@ In this scenario, given test cases will fall under the following constraints:
 
 -----------------------------
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Node {
+    int data;
+    Node* next;
+};
+
+// circular list create panna function
+Node* createList(int arr[], int n) {
+    if (n == 0) return NULL;
+
+    Node* head = new Node{arr[0], NULL};
+    Node* temp = head;
+
+    for (int i = 1; i < n; i++) {
+        Node* newNode = new Node{arr[i], NULL};
+        temp->next = newNode;
+        temp = newNode;
+    }
+
+    temp->next = head; // circular link
+    return head;
+}
+
+// first node delete panna function
+Node* deleteFromBeginning(Node* head) {
+    if (head == NULL) return NULL;
+
+    // single node case
+    if (head->next == head) {
+        delete head;
+        return NULL;
+    }
+
+    Node* last = head;
+
+    // last node find pannuvom
+    while (last->next != head) {
+        last = last->next;
+    }
+
+    Node* temp = head;
+    head = head->next;     // new head
+    last->next = head;     // circular maintain
+    delete temp;
+
+    return head;
+}
+
+// list print panna function
+void printList(Node* head) {
+    if (head == NULL) return;
+
+    Node* temp = head;
+
+    do {
+        cout << temp->data << " ";
+        temp = temp->next;
+    } while (temp != head);
+}
+
+int main() {
+    int M;
+    cin >> M;
+
+    int arr[10];
+
+    for (int i = 0; i < M; i++) {
+        cin >> arr[i];
+    }
+
+    Node* head = createList(arr, M);
+
+    head = deleteFromBeginning(head);
+
+    printList(head);
+
+    return 0;
+}
 ```
 --------------------------------
 --------------------------------
+
+## 16. 
