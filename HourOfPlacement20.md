@@ -294,3 +294,49 @@ int main() {
 
 ## HD CODE 
 ## 
+Navigating through a bustling city, a traveller seeks to ascertain the availability of a particular bus number within a list of bus numbers. 
+
+
+
+In your role as a programmer aiding the traveler, your objective is to develop a program that employs the binary search approach to determine whether the provided bus number can be located within the list.
+
+Input format :
+The first line consists of an integer n, representing the number of bus numbers.
+
+The second line consists of n space-separated integers, representing the list of bus numbers.
+
+The third line consists of an integer x, representing the bus number to search.
+
+Output format :
+If the bus number is found in the list, print "Bus No. found at index " followed by the index(0-indexed).
+
+Otherwise, print "Bus No. Not found".
+
+
+
+Refer to the sample output for the exact format.
+
+Code constraints :
+In this scenario, the test cases fall under the following constraints:
+
+1 ≤ n ≤ 15
+
+1 ≤ bus numbers ≤ 100
+
+1 ≤ x ≤ 100
+
+| Case | Total Buses ($N$) | Bus Numbers (Sorted) | Target Bus No. | Output |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `5` | `43, 67, 89, 90, 96` | `90` | `Bus No. found at index 3` |
+| **2** | `5` | `43, 67, 89, 90, 96` | `91` | `Bus No. Not found` |
+
+
+--------------------------------
+
+```cpp
+
+```
+
+-------------------------------------------
+-------------------------------------------
+-------------------------------------------
