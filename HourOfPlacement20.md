@@ -245,7 +245,48 @@ The index starts at 1.
 
 ----------
 ```cpp
+#include <iostream>
+using namespace std;
 
+int main() {
+    int n1, n2;
+    cin >> n1;
+
+    int inventory[10];
+
+    // Read inventory IDs
+    for(int i = 0; i < n1; i++) {
+        cin >> inventory[i];
+    }
+
+    cin >> n2;
+
+    int check[10];
+
+    // Read IDs to check
+    for(int i = 0; i < n2; i++) {
+        cin >> check[i];
+    }
+
+    // Linear search for each ID
+    for(int i = 0; i < n2; i++) {
+        bool found = false;
+
+        for(int j = 0; j < n1; j++) {
+            if(check[i] == inventory[j]) {
+                cout << check[i] << " found at position " << j + 1 << endl;
+                found = true;
+                break;
+            }
+        }
+
+        if(!found) {
+            cout << check[i] << " not found in the inventory" << endl;
+        }
+    }
+
+    return 0;
+}
 ```
 
 ----------------------
