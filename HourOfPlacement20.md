@@ -334,7 +334,46 @@ In this scenario, the test cases fall under the following constraints:
 --------------------------------
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+int main() {
+    int n, x;
+    cin >> n;
+
+    int arr[15];
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cin >> x;
+
+    int left = 0, right = n - 1;
+    int mid;
+    bool found = false;
+
+    while(left <= right) {
+        mid = (left + right) / 2;
+
+        if(arr[mid] == x) {
+            cout << "Bus No. found at index " << mid;
+            found = true;
+            break;
+        }
+        else if(arr[mid] < x) {
+            left = mid + 1;
+        }
+        else {
+            right = mid - 1;
+        }
+    }
+
+    if(!found) {
+        cout << "Bus No. Not found";
+    }
+
+    return 0;
+}
 ```
 
 -------------------------------------------
