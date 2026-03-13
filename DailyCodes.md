@@ -1881,4 +1881,39 @@ int main() {
 
 ---------------------------------
 ---------------------------------
-## 17.
+## 17.The university has a list of student GPAs, and they want to identify students who are eligible for a scholarship. To be eligible, a student's GPA must be greater than 3.5. 
+
+
+
+Your task is to write a program using linear search to find the number of eligible students for scholarships.
+
+Input format :
+The first line of input consists of an integer N, representing the number of students.
+
+The second line consists of N space-separated floating-point numbers, each representing the GPA of a student.
+
+Output format :
+The output prints the number of eligible students (those with a GPA greater than 3.5).
+
+If no such students are found, print "No students found with GPA > 3.5"
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The given test cases will fall under the following constraints:
+
+1 ≤ N ≤ 10
+
+0.0 ≤ GPA ≤ 10.0
+
+| Case | No. of Students ($N$) | Student GPAs | Output |
+| :--- | :--- | :--- | :--- |
+| **1** | `7` | 3.2, 4.1, 2.9, 3.8, 3.5, 3.7, 3.6 | `4` |
+| **2** | `4` | 3.5, 3.7, 2.5, 4.6 | `2` |
+| **3** | `5` | 1.2, 2.3, 2.6, 3.4, 3.5 | `No students found with GPA > 3.5` |
+
+----------------
+
+
