@@ -125,4 +125,40 @@ int main() {
 ----------------
 ----------------
 
-## C2.  
+## C2.  You are working as a data analyst for a company that collects user feedback scores for their products. The feedback scores are recorded sequentially, and sometimes you need to identify specific feedback points for analysis.
+
+
+
+Given a list of feedback scores and a particular feedback score, your task is to find the position of the second occurrence of this feedback score in the list. If the feedback score appears less than twice, you need to handle that as well:
+
+
+
+If the feedback score does not appear at all, print a message indicating that the score was not found.
+If the feedback score appears only once, print a message indicating that the score was found only once.
+If the feedback score appears more than once, print the position (index) of the second occurrence.
+Input format :
+The first input line contains an integer n, the number of feedback scores.
+
+The second input line contains n space-separated integers, each representing a feedback score.
+
+The third input line contains an integer X, which is the feedback score you need to find the second occurrence of.
+
+Output format :
+The output displays the following format:
+
+The position of the second occurrence of the key in the list, or:
+"X Score not found." if the score is not present in the list, or:
+"X Score found only once." if the score appears only once.
+
+
+Refer to the sample output for formatting specifications.
+
+| Case | Size ($N$) | Score List | Target Score | Output |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `5` | 45, 56, 98, 56, 32 | `56` | `3` |
+| **2** | `4` | 71, 52, 63, 94 | `89` | `89 Score not found.` |
+| **3** | `4` | 85, 96, 32, 45 | `45` | `4` |
+
+---------------------
+
+
