@@ -205,5 +205,51 @@ int main() {
 ------------------
 
 ## C3. 
+In a warehouse, inventory management requires checking the availability of specific items in stock. Each item in the inventory is identified by a unique numerical ID. Given a list of items currently in the warehouse and a set of item IDs that need to be checked, determine if each item ID from the set is present in the warehouse inventory and identify its position if it is available.
 
 
+
+Implement a tool that reads the inventory IDs, followed by a list of item IDs to be checked, and then performs a search to determine if each item ID is present in the inventory. For each item ID, output its position in the inventory if found, or indicate that the item is not available.
+
+Input format :
+The first line contains an integer n1, representing the number of items in the warehouse inventory.
+
+The second line contains n1 space-separated integers, representing the IDs of the items in the warehouse inventory.
+
+The third line contains an integer n2, representing the number of item IDs to be checked.
+
+The fourth line contains n2 space-separated integers, representing the item IDs that need to be checked.
+
+Output format :
+The output displays for each item ID in the checklist, separated by a line:
+
+
+
+If the item ID is found in the inventory, output the item ID followed by its position (1-based index) in the inventory.
+
+If the item ID is not found in the inventory, output the item ID followed by "not found in the inventory".
+
+
+
+Refer to the sample outputs for format specifications.
+
+Code constraints :
+1 ≤ n1 n2 ≤ 10
+
+The index starts at 1.
+
+| Case | Inventory Size | Inventory Items | Search Count | Items to Search | Output |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | `5` | `10, 20, 30, 40, 50` | `4` | `20, 30, 40, 60` | **20** found at position 2<br>**30** found at position 3<br>**40** found at position 4<br>**60** not found in the inventory |
+| **2** | `4` | `11, 22, 33, 44` | `2` | `22, 55` | **22** found at position 2<br>**55** not found in the inventory |
+
+----------
+```cpp
+
+```
+
+----------------------
+----------------------
+
+## HD CODE 
+## 
