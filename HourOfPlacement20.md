@@ -52,14 +52,77 @@ Donald	IT
 Steven	IT
 --------------------
 ```sql
-
+SELECT Name, Department
+FROM Employee
+WHERE Gender = 'M';
 ```
 
 -----------------------
 -----------------------
 
-##
+## C1. Lena, a financial analyst, needs to sort daily profit and loss values for a stock portfolio, which can be either positive or negative. Using a bubble sorting technique, she must arrange these values in ascending order. 
 
-Refer to the sample output for the column headers.
 
-Note :
+
+Help Lena ensure the profit and loss values are sorted accurately.
+
+Input format :
+The first line of input consists of an integer n, representing the number of daily values.
+
+The second line consists of n space-separated integers, representing the profit(positive) and loss(negative) values.
+
+Output format :
+The output prints the sorted profit and loss values in ascending order.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 ≤ n ≤ 10
+
+-100 ≤ profit/loss values ≤ 100
+
+| Case | Size ($N$) | Input Array | Sorted Output (Ascending) |
+| :--- | :--- | :--- | :--- |
+| **1** | `6` | `23, -45, 67, 12, 57, 13` | `-45 12 13 23 57 67` |
+| **2** | `7` | `45, 35, 75, 15, -78, 65, -34` | `-78 -34 15 35 45 65 75` |
+
+----------
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int arr[10];
+
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    // Bubble Sort
+    for(int i = 0; i < n-1; i++) {
+        for(int j = 0; j < n-i-1; j++) {
+            if(arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+
+    // Print sorted array
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+```
+----------------
+----------------
+
+## C2.  
