@@ -204,8 +204,7 @@ int main() {
 ------------------
 ------------------
 
-## C3. 
-In a warehouse, inventory management requires checking the availability of specific items in stock. Each item in the inventory is identified by a unique numerical ID. Given a list of items currently in the warehouse and a set of item IDs that need to be checked, determine if each item ID from the set is present in the warehouse inventory and identify its position if it is available.
+## C3. In a warehouse, inventory management requires checking the availability of specific items in stock. Each item in the inventory is identified by a unique numerical ID. Given a list of items currently in the warehouse and a set of item IDs that need to be checked, determine if each item ID from the set is present in the warehouse inventory and identify its position if it is available.
 
 
 
@@ -293,8 +292,7 @@ int main() {
 ----------------------
 
 ## HD CODE 
-## 
-Navigating through a bustling city, a traveller seeks to ascertain the availability of a particular bus number within a list of bus numbers. 
+## Navigating through a bustling city, a traveller seeks to ascertain the availability of a particular bus number within a list of bus numbers. 
 
 
 
