@@ -1992,5 +1992,44 @@ The test cases fall under the following constraints:
 
 --------------
 
+```cpp
+#include <iostream>
+using namespace std;
 
+int main() {
+    int n;
+    cin >> n;
 
+    int weight[n];
+
+    for(int i = 0; i < n; i++) {
+        cin >> weight[i];
+    }
+
+    int max = weight[0];
+    int min = weight[0];
+
+    // Linear search to find heaviest and lightest
+    for(int i = 1; i < n; i++) {
+        if(weight[i] > max) {
+            max = weight[i];
+        }
+        if(weight[i] < min) {
+            min = weight[i];
+        }
+    }
+
+    int diff = max - min;
+
+    cout << "Heaviest piece weight: " << max << endl;
+    cout << "Lightest piece weight: " << min << endl;
+    cout << "Weight difference: " << diff;
+
+    return 0;
+}
+```
+
+-------------------------
+-------------------------
+
+## 19. 
