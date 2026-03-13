@@ -1915,5 +1915,40 @@ The given test cases will fall under the following constraints:
 | **3** | `5` | 1.2, 2.3, 2.6, 3.4, 3.5 | `No students found with GPA > 3.5` |
 
 ----------------
+```cpp
+#include <iostream>
+using namespace std;
 
+int main() {
+    int n;
+    cin >> n;
 
+    float gpa[n];
+    int count = 0;
+
+    // Input GPAs
+    for(int i = 0; i < n; i++) {
+        cin >> gpa[i];
+    }
+
+    // Linear search for GPA > 3.5
+    for(int i = 0; i < n; i++) {
+        if(gpa[i] > 3.5) {
+            count++;
+        }
+    }
+
+    // Output result
+    if(count == 0) {
+        cout << "No students found with GPA > 3.5";
+    } else {
+        cout << count;
+    }
+
+    return 0;
+}
+```
+------------------
+------------------
+
+## 18.
