@@ -160,5 +160,50 @@ Refer to the sample output for formatting specifications.
 | **3** | `4` | 85, 96, 32, 45 | `45` | `4` |
 
 ---------------------
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, x;
+    cin >> n;
+
+    int arr[10];
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cin >> x;
+
+    int count = 0;
+    int pos = -1;
+
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == x) {
+            count++;
+            if(count == 2) {
+                pos = i;
+                break;
+            }
+        }
+    }
+
+    if(count == 0) {
+        cout << x << " Score not found.";
+    }
+    else if(count == 1) {
+        cout << x << " Score found only once.";
+    }
+    else {
+        cout << pos;
+    }
+
+    return 0;
+}
+```
+------------------
+------------------
+
+## C3. 
 
 
