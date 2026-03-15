@@ -77,4 +77,43 @@ int main()
 ----------------
 ----------------
 
-## 2.
+## 2.In a local election, each candidate is assigned a unique numeric ID. After collecting the votes, you need to determine if any candidate received more than n−2 votes, where n is the total number of votes cast. This will help in identifying if there is a clear winner with significant support.
+
+
+
+Your task is to write a program that determines if there is a candidate ID that received more than n−2 votes. If such a candidate exists, return their ID. Otherwise, return "No majority candidate found."
+
+Input format :
+The first line contains an integer n - the total number of votes cast.
+
+The second line contains n space-separated integers, each representing the candidate ID for each vote.
+
+Output format :
+The output displays the following format:
+
+If a candidate received more than n−2 votes, output their ID.
+
+If no candidate meets this criterion, output "No majority candidate found."
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 ≤ n ≤ 10
+
+1 ≤ candidate ID ≤ 100
+
+
+
+
+-----------
+```cpp
+
+
+```
+
+-------------------
+-------------------
+
+## 3.
