@@ -104,6 +104,11 @@ Code constraints :
 
 1 ≤ candidate ID ≤ 100
 
+| Case | Total Votes ($N$) | Candidate IDs | Output |
+| :--- | :--- | :--- | :--- |
+| **1** | `5` | 1, 4, 1, 1, 1 | `1` |
+| **2** | `8` | 12, 12, 12, 12, 13, 12, 12, 12 | `12` |
+| **3** | `5` | 56, 58, 45, 54, 55 | `No majority candidate found.` |
 
 
 
