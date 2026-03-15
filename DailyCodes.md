@@ -2062,7 +2062,54 @@ In this scenario, the test cases fall under the following constraints:
 
 ------------------
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Date {
+    int d, m, y;
+};
+
+bool earlier(Date a, Date b) {
+    if (a.y != b.y)
+        return a.y < b.y;
+    if (a.m != b.m)
+        return a.m < b.m;
+    return a.d < b.d;
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    Date arr[20];
+
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i].d >> arr[i].m >> arr[i].y;
+    }
+
+    // Selection Sort
+    for(int i = 0; i < n-1; i++) {
+        int minIndex = i;
+
+        for(int j = i+1; j < n; j++) {
+            if(earlier(arr[j], arr[minIndex])) {
+                minIndex = j;
+            }
+        }
+
+        // swap
+        Date temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+
+    // print sorted dates
+    for(int i = 0; i < n; i++) {
+        cout << arr[i].d << " " << arr[i].m << " " << arr[i].y << endl;
+    }
+
+    return 0;
+}
 ```
 
 -----------------------------------------
