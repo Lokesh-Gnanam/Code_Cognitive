@@ -2115,4 +2115,127 @@ int main() {
 -----------------------------------------
 -----------------------------------------
 
-## 20.
+## 20.Sam needs to sort an array of integers using the divide-and-conquer method. He wants to implement the merge sort algorithm, displaying the array after each iteration to track the sorting process. 
+
+
+
+Help him write a program that divides the array, merges it back, and prints the array.
+
+Input format :
+The first line of input consists of an integer n, denoting the array size.
+
+The second line consists of n space-separated integers, representing the array of elements.
+
+Output format :
+The first line of output prints "Given Array" followed by a (String), indicating the start of the initial array display.
+
+The second line of output prints the array elements (integers) separated by spaces.
+
+
+
+After each merge iteration, the output prints "After iteration X", where X is the iteration number (starting from 1). This is followed by the (String) "After iteration X" to indicate the iteration count.
+
+On the next line, the current state of the array after that iteration is printed, showing the array elements (integers) separated by spaces.
+
+
+
+Finally, after all iterations are completed, the output prints "Sorted Array" followed by a (String), indicating the sorted array.
+
+The final line prints the sorted array (integers), with each element separated by spaces.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The given test cases fall under the following constraints:
+
+1 ≤ n ≤ 20
+
+0 ≤ array elements ≤ 50
+| Case | Size ($N$) | Initial Array | Final Sorted Array |
+| :--- | :--- | :--- | :--- |
+| **1** | `6` | `4 1 5 3 2 6` | `1 2 3 4 5 6` |
+| **2** | `8` | `8 1 7 2 6 3 5 4` | `1 2 3 4 5 6 7 8` |
+
+
+```cpp
+
+```#include <iostream>
+using namespace std;
+
+int iteration = 0;
+
+void printArray(int arr[], int n)
+{
+    for(int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+
+void merge(int arr[], int l, int m, int r, int n)
+{
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    int L[20], R[20];
+
+    for(int i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for(int j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+
+    int i = 0, j = 0, k = l;
+
+    while(i < n1 && j < n2)
+    {
+        if(L[i] <= R[j])
+            arr[k++] = L[i++];
+        else
+            arr[k++] = R[j++];
+    }
+
+    while(i < n1)
+        arr[k++] = L[i++];
+
+    while(j < n2)
+        arr[k++] = R[j++];
+
+    iteration++;
+    cout << "After iteration " << iteration << endl;
+    printArray(arr, n);
+}
+
+void mergeSort(int arr[], int l, int r, int n)
+{
+    if(l < r)
+    {
+        int m = (l + r) / 2;
+
+        mergeSort(arr, l, m, n);
+        mergeSort(arr, m + 1, r, n);
+
+        merge(arr, l, m, r, n);
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int arr[20];
+
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    cout << "Given Array" << endl;
+    printArray(arr, n);
+
+    mergeSort(arr, 0, n - 1, n);
+
+    cout << "Sorted Array" << endl;
+    printArray(arr, n);
+
+    return 0;
+}
