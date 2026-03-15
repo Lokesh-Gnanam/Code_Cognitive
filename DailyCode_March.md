@@ -114,7 +114,37 @@ Code constraints :
 
 -----------
 ```cpp
+#include <iostream>
+#include <map>
+using namespace std;
 
+int main()
+{
+    int n;
+    cin >> n;
+
+    int arr[10];
+    map<int,int> freq;
+
+    for(int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        freq[arr[i]]++;
+    }
+
+    for(auto it : freq)
+    {
+        if(it.second > n - 2)
+        {
+            cout << it.first;
+            return 0;
+        }
+    }
+
+    cout << "No majority candidate found.";
+
+    return 0;
+}
 
 ```
 
