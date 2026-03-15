@@ -1,7 +1,6 @@
 # CODE AND COGNITIVE MARCH 2026
 
-## 1. 
-In a classroom with assigned seat numbers ranging from 1 to N, students enter the room and occupy their seats. The seating arrangement is initially in sequential order, but due to a mix-up, one student's seat is left unoccupied. 
+## 1. In a classroom with assigned seat numbers ranging from 1 to N, students enter the room and occupy their seats. The seating arrangement is initially in sequential order, but due to a mix-up, one student's seat is left unoccupied. 
 
 
 
