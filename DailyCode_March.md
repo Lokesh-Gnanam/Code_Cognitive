@@ -32,7 +32,47 @@ Code constraints :
 
 ------------------
 ```cpp
+#include <iostream>
+#include <algorithm>
+using namespace std;
 
+int main()
+{
+    int n;
+    cin >> n;
+
+    int arr[10];
+
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    sort(arr, arr + n);
+
+    int left = 0, right = n - 1;
+    int missing = -1;
+
+    while(left <= right)
+    {
+        int mid = (left + right) / 2;
+
+        if(arr[mid] != mid + 1)
+        {
+            missing = mid + 1;
+            right = mid - 1;
+        }
+        else
+        {
+            left = mid + 1;
+        }
+    }
+
+    if(missing == -1)
+        cout << "No missing seat number found in the classroom.";
+    else
+        cout << missing;
+
+    return 0;
+}
 ```
 
 ----------------
