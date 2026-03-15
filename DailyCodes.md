@@ -2032,4 +2032,40 @@ int main() {
 -------------------------
 -------------------------
 
-## 19. 
+## 19. Sarah is a historian working on organizing a series of historical events that are recorded only by their occurrence dates. She needs a program that can sort these dates in ascending order to help her understand the chronological progression of these events. Each date is given as three integers representing the day, month, and year. 
+
+
+
+Your task is to develop a program that reads a list of dates and outputs them sorted from the earliest to the latest using selection sort.
+
+Input format :
+The first line consists of an integer N, representing the number of dates.
+
+The following N lines consist of the respective dates as space-separated integers in dd mm yyyy format.
+
+Output format :
+The output prints N lines, each containing three integers day, month, and year, separated by spaces, representing the dates sorted in ascending order.
+
+
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+In this scenario, the test cases fall under the following constraints:
+
+1 ≤ N ≤ 20
+
+| Case | No. of Dates ($N$) | Input Dates | Sorted Output |
+| :--- | :--- | :--- | :--- |
+| **1** | `5` | 20 04 2016, 15 06 2018, 11 09 2019, 30 04 1992, 16 11 2000 | 30 4 1992<br>16 11 2000<br>20 4 2016<br>15 6 2018<br>11 9 2019 |
+| **2** | `3` | 26 02 2001, 02 12 2000, 25 02 2001 | 2 12 2000<br>25 2 2001<br>26 2 2001 |
+
+------------------
+```cpp
+
+```
+
+-----------------------------------------
+-----------------------------------------
+
+## 20.
