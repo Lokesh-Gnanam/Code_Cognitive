@@ -293,7 +293,106 @@ Refer to the sample output for the formatting specifications.
 | **2** | `7` | 7270, 5318, 2964, 4237, 7388, 7010, 2468 | `4` | `7270 5318 2964 7388 7010 2468` |
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Node {
+    int data;
+    Node* next;
+};
+
+Node* head = NULL;
+
+// Insert function
+void insert(int value) {
+    Node* newNode = new Node();
+    newNode->data = value;
+
+    if (head == NULL) {
+        head = newNode;
+        newNode->next = head;
+    }
+    else {
+        Node* temp = head;
+        while (temp->next != head) {
+            temp = temp->next;
+        }
+
+        temp->next = newNode;
+        newNode->next = head;
+    }
+}
+
+// Delete k-th node
+void deleteK(int k) {
+
+    if (head == NULL) return;
+
+    Node *temp = head, *prev = NULL;
+
+    // If first node delete
+    if (k == 1) {
+        while (temp->next != head) {
+            temp = temp->next;
+        }
+
+        Node* del = head;
+
+        if (head->next == head) {
+            head = NULL;
+        }
+        else {
+            temp->next = head->next;
+            head = head->next;
+        }
+
+        delete del;
+        return;
+    }
+
+    temp = head;
+
+    for (int i = 1; i < k; i++) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    prev->next = temp->next;
+    delete temp;
+}
+
+// Display
+void display() {
+    if (head == NULL) return;
+
+    Node* temp = head;
+
+    do {
+        cout << temp->data << " ";
+        temp = temp->next;
+    } while (temp != head);
+}
+
+int main() {
+
+    int n;
+    cin >> n;
+
+    for(int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        insert(x);
+    }
+
+    int k;
+    cin >> k;
+
+    deleteK(k);
+
+    display();
+
+    return 0;
+}
 ```
 
 ---------------------
