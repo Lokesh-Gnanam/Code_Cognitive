@@ -187,7 +187,85 @@ In this scenario, the test cases fall under the following constraints:
 | **2** | `3` | `10, 20, 30` | 10 20 30 | **30** 20 **10** |
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+struct Node {
+    int data;
+    Node* next;
+};
+
+Node* head = NULL;
+
+// Insert node into circular linked list
+void insert(int value) {
+    Node* newNode = new Node();
+    newNode->data = value;
+
+    if (head == NULL) {
+        head = newNode;
+        newNode->next = head;
+    } 
+    else {
+        Node* temp = head;
+        while (temp->next != head) {
+            temp = temp->next;
+        }
+
+        temp->next = newNode;
+        newNode->next = head;
+    }
+}
+
+// Traverse and display
+void display() {
+    if (head == NULL) return;
+
+    Node* temp = head;
+
+    do {
+        cout << temp->data << " ";
+        temp = temp->next;
+    } while (temp != head);
+}
+
+// Swap first and last node data
+void swapFirstLast() {
+    if (head == NULL || head->next == head) return;
+
+    Node* temp = head;
+
+    while (temp->next != head) {
+        temp = temp->next;
+    }
+
+    // temp is last node
+    int t = head->data;
+    head->data = temp->data;
+    temp->data = t;
+}
+
+int main() {
+
+    int m;
+    cin >> m;
+
+    for(int i=0;i<m;i++) {
+        int x;
+        cin >> x;
+        insert(x);
+    }
+
+    cout << "Before Swap: ";
+    display();
+
+    swapFirstLast();
+
+    cout << "\nAfter Swap: ";
+    display();
+
+    return 0;
+}
 ```
 
 ---------------------
