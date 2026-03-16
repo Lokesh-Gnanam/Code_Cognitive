@@ -181,4 +181,16 @@ In this scenario, the test cases fall under the following constraints:
 
 1 ≤ unique idenitifiers ≤ 100
 
+| Case | Size ($N$) | Input Array | Before Swap | After Swap |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `10` | `3, 4, 5, 6, 7, 8, 1, 2, 3, 9` | 3 4 5 6 7 8 1 2 3 9 | **9** 4 5 6 7 8 1 2 3 **3** |
+| **2** | `3` | `10, 20, 30` | 10 20 30 | **30** 20 **10** |
 
+```cpp
+
+```
+
+---------------------
+----------------------
+
+## 4.
