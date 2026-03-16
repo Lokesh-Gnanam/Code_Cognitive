@@ -287,3 +287,17 @@ The program outputs the updated list of employee IDs after deleting the employee
 
 Refer to the sample output for the formatting specifications.
 
+| Case | Total Employees ($n$) | Employee IDs | Position to Remove ($k$) | Output |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `5` | 10, 20, 30, 40, 50 | `4` | `10 20 30 50` |
+| **2** | `7` | 7270, 5318, 2964, 4237, 7388, 7010, 2468 | `4` | `7270 5318 2964 7388 7010 2468` |
+
+```cpp
+
+```
+
+---------------------
+---------------------
+
+## 5.
+---------------------
