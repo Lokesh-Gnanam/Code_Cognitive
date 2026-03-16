@@ -271,4 +271,19 @@ int main() {
 ---------------------
 ----------------------
 
-## 4.
+## 4. David, an HR manager, maintains a dynamic list of employee IDs using a linked list. Occasionally, he needs to remove a specific employee from the list based on their position in the sequence. Implement a function using circular linked list that deletes the k-th employee from the list and returns the updated list.
+
+Input format :
+The first line of input consists of an integer (n), representing the number of employees in the linked list.
+
+The second line consists of n space-separated integers, representing the employee IDs in the linked list.
+
+The third line consists of an integer (k), representing the 1-based position of the employee to remove.
+
+Output format :
+The program outputs the updated list of employee IDs after deleting the employee at position k, printed as space-separated integers in a single line.
+
+
+
+Refer to the sample output for the formatting specifications.
+
