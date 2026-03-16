@@ -151,4 +151,34 @@ int main()
 -------------------
 -------------------
 
-## 3.
+## 3.Lalit and his friends are playing cards sitting around a circular table. Each player is represented by a node in a circular linked list, where the data in the node represents the player's unique identifier. After the first game, the first player and the last player exchange their positions. Pranav, who is watching the game, wants to simulate this scenario using a circular linked list.
+
+
+
+Help Pranav write a program to manage this scenario by implementing the following operations:
+
+
+
+Insert nodes (players) into the circular linked list.
+Traverse the circular linked list to display the players.
+Exchange the first and last nodes (players) in the circular linked list.
+Input format :
+The first line of input contains an integer m, the number of players.
+
+The second line contains m space-separated integers representing the unique identifiers of the players.
+
+Output format :
+The output displays the list of players before and after the exchange of the first and last nodes in separate lines.
+
+
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+In this scenario, the test cases fall under the following constraints:
+
+2 ≤ m ≤ 20
+
+1 ≤ unique idenitifiers ≤ 100
+
+
