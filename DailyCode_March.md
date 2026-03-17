@@ -431,6 +431,7 @@ Strings are case-sensitive.
 | **2** | `wonder` | `hello` | `rednow` | `rednow`<br>`wonder and hello are not same` |
 | **3** | `ABC` | `abc` | `CBA` | `CBA`<br>`ABC and abc are not same` |
 
+-------------------------------------------
 ```cpp
 #include <iostream>
 #include <string>
