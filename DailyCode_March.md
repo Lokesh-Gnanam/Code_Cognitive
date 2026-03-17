@@ -425,7 +425,46 @@ The input strings contain only lowercase and uppercase letters.
 
 Strings are case-sensitive.
 
+| Case | String 1 | String 2 | Reversed String 1 | Final Output |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `hello` | `hello` | `olleh` | `olleh`<br>`hello and hello are same` |
+| **2** | `wonder` | `hello` | `rednow` | `rednow`<br>`wonder and hello are not same` |
+| **3** | `ABC` | `abc` | `CBA` | `CBA`<br>`ABC and abc are not same` |
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s1, s2;
+
+    // Input
+    cin >> s1;
+    cin >> s2;
+
+    // Reverse s1
+    string reversed = "";
+    for(int i = s1.length() - 1; i >= 0; i--) {
+        reversed += s1[i];
+    }
+
+    // Output reversed string
+    cout << reversed << endl;
+
+    // Compare strings
+    if(s1 == s2) {
+        cout << s1 << " and " << s2 << " are same";
+    } else {
+        cout << s1 << " and " << s2 << " are not same";
+    }
+
+    return 0;
+}
+```
 
 
 ---------------------
 ---------------------
+
+## 6.
