@@ -398,5 +398,34 @@ int main() {
 ---------------------
 ---------------------
 
-## 5.
+## 5.Reenu wants to perform certain operations on strings. 
+
+She needs a program that can accomplish the following tasks:
+
+Accept an input string s1, reverse the string, and display the reversed string.
+Accept two input strings s1 and s2, compare them, and display whether they are the same or not.
+Input format :
+The first line consists of the first string, representing the str1.
+
+The second line consists of the string, representing the str2.
+
+Output format :
+The first line displays the string, representing the reversed string of the first string.
+
+The second line displays the string, whether str1 and str2 are the same or not in the format: "<string1> and <string2> are same/not same".
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+The input string has a maximum length of 25 characters.
+
+The input strings contain only lowercase and uppercase letters.
+
+Strings are case-sensitive.
+
+
+
+---------------------
 ---------------------
