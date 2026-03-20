@@ -21,7 +21,8 @@ Refer to the sample output for the formatting specifications.
 Note :
 
 ```mysql
-
+ALTER TABLE department
+MODIFY departmentId INT(30) NOT NULL;
 ```
 
 ------------------------
