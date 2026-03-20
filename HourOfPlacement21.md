@@ -242,7 +242,51 @@ Code Size : 1024 kb
 | **2** | `0` | `-1` |
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+// Check prime function
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    // Invalid check
+    if (N <= 0 || N >= 50) {
+        cout << -1;
+        return 0;
+    }
+
+    for (int num = 1; num <= N; num++) {
+
+        int temp = num;
+        int count = 0;
+
+        for (int i = 2; i <= temp; i++) {
+
+            if (temp % i == 0 && isPrime(i)) {
+                count++;
+
+                // remove all occurrences of i
+                while (temp % i == 0) {
+                    temp /= i;
+                }
+            }
+        }
+
+        cout << count << " ";
+    }
+
+    return 0;
+}
 ```
 ------------------------------
 ------------------------------
