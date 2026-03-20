@@ -59,7 +59,43 @@ Code constraints :
 | **1** | `3` | 1, 2, 0 | 3 | `3` |
 
 ```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
 
+int main() {
+    int N;
+    cin >> N;
+
+    vector<int> T(N);
+    for(int i = 0; i < N; i++) {
+        cin >> T[i];
+    }
+
+    int bestStart = 1;
+    int maxCount = -1;
+
+    // Try every starting position S
+    for(int S = 0; S < N; S++) {
+        int count = 0;
+
+        for(int i = 0; i < N; i++) {
+            int studentIndex = (S + i) % N;
+
+            if(i >= T[studentIndex]) {
+                count++;
+            }
+        }
+
+        if(count > maxCount) {
+            maxCount = count;
+            bestStart = S + 1; // convert to 1-based
+        }
+    }
+
+    cout << bestStart;
+    return 0;
+}
 ```
 
 ------------------------
