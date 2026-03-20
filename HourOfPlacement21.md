@@ -54,5 +54,15 @@ Code constraints :
 1 < N < 105
 
 0 < Ti < N
+| Case | Total Numbers ($N$) | Input Elements | Missing Positive Integer | Output |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `3` | 1, 2, 0 | 3 | `3` |
 
+```cpp
 
+```
+
+------------------------
+------------------------
+
+## C2. 
