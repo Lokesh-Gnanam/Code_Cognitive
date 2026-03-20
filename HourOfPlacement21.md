@@ -133,7 +133,59 @@ Code constraints :
 | **3** | `1 6` | 8, 5, 19, 24, 53, 78 | `No Perfect Squares.` |
 
 ```cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
 
+int main() {
+    int r, c;
+    cin >> r >> c;
+
+    // Invalid check
+    if (r <= 0 || c <= 0) {
+        cout << "Invalid Rows or columns";
+        return 0;
+    }
+
+    int arr[10][10];
+    int count = 0;
+
+    // Input matrix
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            cin >> arr[i][j];
+        }
+    }
+
+    // Check perfect squares
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+
+            int num = arr[i][j];
+
+            if (num >= 0) {
+                int root = sqrt(num);
+
+                if (root * root == num) {
+                    count++;
+                }
+            }
+        }
+    }
+
+    // Output format
+    if (count == 0) {
+        cout << "No Perfect Squares.";
+    }
+    else if (count == 1) {
+        cout << "1 Perfect Square.";
+    }
+    else {
+        cout << count << " Perfect Squares.";
+    }
+
+    return 0;
+}
 ```
 
 ---------------------
