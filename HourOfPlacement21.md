@@ -320,8 +320,18 @@ Each barcode number will consist of exactly 16 digits.
 The program should use bucket sort to sort the barcode numbers.
 
 The program should be efficient and use as little memory as possible.
+| Case | Total Barcodes ($N$) | Input Barcode List | Output (Sorted) |
+| :--- | :--- | :--- | :--- |
+| **1** | `5` | 2345678901234567<br>1234567890123456<br>3456789012345678<br>5678901234567890<br>4567890123456789 | **Sorted barcode numbers:**<br>1234567890123456<br>2345678901234567<br>3456789012345678<br>4567890123456789<br>5678901234567890 |
+
+```cpp
+
+```
 
 
+-------------------
+-------------------
+-------------------
 
 
 
