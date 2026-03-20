@@ -325,7 +325,57 @@ The program should be efficient and use as little memory as possible.
 | **1** | `5` | 2345678901234567<br>1234567890123456<br>3456789012345678<br>5678901234567890<br>4567890123456789 | **Sorted barcode numbers:**<br>1234567890123456<br>2345678901234567<br>3456789012345678<br>4567890123456789<br>5678901234567890 |
 
 ```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
 
+void bucketSort(vector<long long> &arr, int n) {
+    
+    long long exp = 1; // 1,10,100...
+
+    // since max 16 digits
+    for (int d = 0; d < 16; d++) {
+
+        vector<vector<long long>> bucket(10);
+
+        // place elements into buckets
+        for (int i = 0; i < n; i++) {
+            int digit = (arr[i] / exp) % 10;
+            bucket[digit].push_back(arr[i]);
+        }
+
+        // collect back
+        int index = 0;
+        for (int i = 0; i < 10; i++) {
+            for (long long num : bucket[i]) {
+                arr[index++] = num;
+            }
+        }
+
+        exp *= 10;
+    }
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<long long> arr(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    bucketSort(arr, n);
+
+    cout << "Sorted barcode numbers:" << endl;
+
+    for (long long num : arr) {
+        cout << num << endl;
+    }
+
+    return 0;
+}
 ```
 
 
