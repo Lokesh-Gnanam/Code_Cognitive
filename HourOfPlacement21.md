@@ -126,4 +126,17 @@ Refer to the sample output for formatting specifications.
 Code constraints :
 1 ≤ r, c ≤ 10 (maximum size of the matrix is 10×10).
 
+| Case | Dimensions | Matrix Elements | Output |
+| :--- | :--- | :--- | :--- |
+| **1** | `3 3` | 56, -8, 5, -6, 8, 9, 7, 4, 19 | `2 Perfect Squares.` |
+| **2** | `-8 -6` | — | `Invalid Rows or columns` |
+| **3** | `1 6` | 8, 5, 19, 24, 53, 78 | `No Perfect Squares.` |
 
+```cpp
+
+```
+
+---------------------
+---------------------
+
+## C3. 
