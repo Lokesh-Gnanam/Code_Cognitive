@@ -101,4 +101,29 @@ int main() {
 ------------------------
 ------------------------
 
-## C2. 
+## C2. Samir has the ability to identify the number of perfect squares present in a two-dimensional array by examining its elements. Help him by writing a computer program that performs this operation efficiently.
+
+Input format :
+The input consists of two integers r and c separated by a space, representing the number of rows and columns of the matrix.
+
+This is followed by r lines, each containing c space-separated integers representing the elements of the matrix.
+
+Output format :
+The output consists of "Invalid Rows or columns" if either r or c is less than or equal to 0.
+
+Otherwise, a message that indicates the number of perfect squares in the format:
+
+"No Perfect Squares." if the count is 0
+
+"1 Perfect Square." if the count is 1
+
+"<count> Perfect Squares." if the count is more than 1
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+1 ≤ r, c ≤ 10 (maximum size of the matrix is 10×10).
+
+
