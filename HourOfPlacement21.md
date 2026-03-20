@@ -191,4 +191,52 @@ int main() {
 ---------------------
 ---------------------
 
-## C3. 
+## C3. Arjun is curious about number theory and wants to analyze how many distinct prime factors each number has from 1 to N. He decides to write a program to count them for each number up to N, but needs help implementing the logic.
+
+
+
+If Arjun accidentally enters a value of N that is less than or equal to 0 or greater than or equal to 50, the program should output -1. Help him to implement the task.
+
+
+
+Example:
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+0 1 1 1 1
+
+
+
+Explanation:
+
+1 has 0 prime factors
+
+2, 3, 4, 5 all have exactly 1 distinct prime factor
+
+For example, 4 = 2×2 → only one distinct prime (2)
+
+Input format :
+The input contains an integer N representing the upper limit of the range.
+
+Output format :
+If N is less than or equal to 0 or greater than or equal to 50, print -1.
+
+Otherwise, print the number of distinct prime factors for each number from 1 to N, separated by spaces, in a single line.
+
+
+
+Refer to the sample output for formatting specifications.
+
+Code constraints :
+-100 ≤ N < 100
+
+
+Code Size : 1024 kb
+
+
+
+
