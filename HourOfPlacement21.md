@@ -292,7 +292,37 @@ int main() {
 ------------------------------
 
 ## HD CODING
-## 
+## Arsh is working on a project that involves sorting a set of barcode numbers. He decides to use a variation of the Bucket Sort algorithm to efficiently sort the barcode numbers. Each barcode number is a non-negative integer, and Arsh has designed his algorithm to handle numbers with up to 16 digits.
+
+
+
+Write a program to implement Arsh's Barcode Sorting algorithm. The program should take the number of barcode numbers and the barcode numbers themselves as input, sort the barcode numbers using Arsh's algorithm, and then print the sorted list.
+
+Input format :
+The first line of input is an integer, n, representing the number of barcode numbers.
+
+The second line of input consists of n space-separated long long integers, each representing a barcode number.
+
+Output format :
+The output of the program consists of the following:
+
+The first line of output prints "Sorted barcode numbers:"
+
+Subsequently, print long long integers, representing each sorted barcode number (ascending order) on a new line.
+
+
+
+Refer to the sample output for the formatting specifications.
+
+Code constraints :
+Each barcode number will consist of exactly 16 digits.
+
+The program should use bucket sort to sort the barcode numbers.
+
+The program should be efficient and use as little memory as possible.
+
+
+
 
 
 
