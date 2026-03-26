@@ -41,6 +41,9 @@ The output prints that result.
 
 Refer to the sample input and output for formatting specifications.
 
+| Case | Input ($n$) | Constructor Output | Calculations | Destructor Output |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `15` | `Inside Constructor` | **Square:** 225<br>**Square Root:** 3.87298<br>**Cube:** 3375<br>**Cube Root:** 2.46621 | `Inside Destructor` |
 
 ```cpp
 #include <iostream>
