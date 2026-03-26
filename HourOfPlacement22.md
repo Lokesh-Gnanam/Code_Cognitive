@@ -24,8 +24,7 @@ WHERE LENGTH(city) = (
 -----------------------
 -----------------------
 
-## C1.Single File Programming Question
-Write a program to find the square, square root, cube, and cube root of the given number.
+## C1.Write a program to find the square, square root, cube, and cube root of the given number.
 
 Create a class Demo and include a constructor to initialize the value and write a method display to print square, square root, cube, and cube root of the given number after that the destructor destroys the object.
 
@@ -88,6 +87,23 @@ int main() {
 -------------------
 -------------------
 
-## C2.
+## C2.Write a program to find the area of the wall. Create a class Wall with the following private attributes
 
- 
+length - double
+
+height - double
+
+Include parameterized constructor Wall(double length, double height) and a method calculateArea() which returns the area of the wall. In the main method get the length and breadth of two walls from the user.
+
+Input format :
+The first line of input consists of the length and breadth of wall1 separated by space.
+
+The second line of input consists of the length and breadth of wall2 separated by space.
+
+
+
+Output format :
+The output prints the areas of wall1 and Wall2.
+
+Refer to the sample input and output for formatting specifications.
+
