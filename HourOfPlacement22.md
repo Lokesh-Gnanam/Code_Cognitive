@@ -19,7 +19,36 @@ city, length.
 -----------------------
 -----------------------
 
-## C1.
+## C1.Single File Programming Question
+Write a program to find the square, square root, cube, and cube root of the given number.
+
+Create a class Demo and include a constructor to initialize the value and write a method display to print square, square root, cube, and cube root of the given number after that the destructor destroys the object.
+
+
+
+
+
+Input format :
+The input consists of a single integer.
+
+Output format :
+The output prints that result.
+
+Refer to the sample input and output for formatting specifications.
+
+Sample test cases :
+Input 1 :
+15
+Output 1 :
+Inside Constructor
+square = 225
+square root = 3.87298
+cube = 3375
+cube root = 2.46621
+Inside Destructor
+Note :
+The program will be evaluated only after the “Submit Code” is clicked.
+Extra spaces and new line characters in the program output will result in the failure of the test case.
 
 
  
