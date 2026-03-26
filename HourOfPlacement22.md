@@ -107,3 +107,48 @@ The output prints the areas of wall1 and Wall2.
 
 Refer to the sample input and output for formatting specifications.
 
+
+```cpp
+
+#include <iostream>
+using namespace std;
+
+class Wall {
+private:
+    double length;
+    double height;
+
+public:
+    // Parameterized constructor
+    Wall(double l, double h) {
+        length = l;
+        height = h;
+    }
+
+    // Method to calculate area
+    double calculateArea() {
+        return length * height;
+    }
+};
+
+int main() {
+    double l1, h1, l2, h2;
+
+    cin >> l1 >> h1;
+    cin >> l2 >> h2;
+
+    Wall wall1(l1, h1);
+    Wall wall2(l2, h2);
+
+    cout << "Area of Wall 1: " << wall1.calculateArea() << endl;
+    cout << "Area of Wall 2: " << wall2.calculateArea();
+
+    return 0;
+}
+
+```
+
+---------------
+---------------
+
+## C3.
