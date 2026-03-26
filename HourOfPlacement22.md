@@ -13,7 +13,12 @@ The output of the query should include the following headers to be considered:
 city, length.
 
 ```mysql
-
+CREATE VIEW LongestCity AS
+SELECT city, LENGTH(city) AS length
+FROM Station
+WHERE LENGTH(city) = (
+    SELECT MAX(LENGTH(city)) FROM Station
+);
 ```
 
 -----------------------
