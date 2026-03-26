@@ -107,6 +107,10 @@ The output prints the areas of wall1 and Wall2.
 
 Refer to the sample input and output for formatting specifications.
 
+| Case | Wall 1 Dimensions ($L \times W$) | Wall 2 Dimensions ($L \times W$) | Output |
+| :--- | :--- | :--- | :--- |
+| **1** | `10.5` x `8.6` | `8.5` x `6.3` | **Area 1:** 90.3<br>**Area 2:** 53.55 |
+| **2** | `13.6` x `12.25` | `90.10` x `12.45` | **Area 1:** 166.6<br>**Area 2:** 1121.74 |
 
 ```cpp
 
