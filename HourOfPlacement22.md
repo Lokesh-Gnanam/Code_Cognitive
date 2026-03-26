@@ -170,4 +170,9 @@ The output prints the status of the search.
 If the element is found, print its index else print Not found.
 
 Refer sample input and output for formatting specifications.
+| Case | Array Size ($n$) | Array Elements | Target | Output |
+| :--- | :--- | :--- | :--- | :--- |
+| **1** | `5` | 50, 40, 10, 20, 30 | `20` | `20 is found at index 3` |
+| **2** | `5` | 50, 40, 30, 10, 20 | `80` | `Not found` |
+
 
