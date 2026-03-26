@@ -42,5 +42,49 @@ The output prints that result.
 Refer to the sample input and output for formatting specifications.
 
 
+```cpp
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+class Demo {
+    int num;
+
+public:
+    // Constructor
+    Demo(int n) {
+        num = n;
+        cout << "Inside Constructor" << endl;
+    }
+
+    // Method to display results
+    void display() {
+        cout << "square = " << num * num << endl;
+        cout << "square root = " << fixed << setprecision(5) << sqrt(num) << endl;
+        cout << "cube = " << num * num * num << endl;
+        cout << "cube root = " << fixed << setprecision(5) << cbrt(num) << endl;
+    }
+
+    // Destructor
+    ~Demo() {
+        cout << "Inside Destructor" << endl;
+    }
+};
+
+int main() {
+    int n;
+    cin >> n;
+
+    Demo obj(n);   // Constructor called
+    obj.display();
+
+    return 0;      // Destructor automatically called
+}
+```
+-------------------
+-------------------
+
+## C2.
 
  
