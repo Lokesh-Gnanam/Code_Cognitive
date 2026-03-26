@@ -155,4 +155,19 @@ int main() {
 ---------------
 ---------------
 
-## C3.
+## C3. Write a program to search for an element in a 1D array using pointers.
+
+Input format :
+The first line of the input consists of the value of n.
+
+The next n inputs are the array elements separated by a space.
+
+The last input is the element to be searched.
+
+Output format :
+The output prints the status of the search.
+
+If the element is found, print its index else print Not found.
+
+Refer sample input and output for formatting specifications.
+
