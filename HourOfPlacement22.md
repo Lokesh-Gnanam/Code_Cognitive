@@ -176,7 +176,40 @@ Refer sample input and output for formatting specifications.
 | **2** | `5` | 50, 40, 30, 10, 20 | `80` | `Not found` |
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+int main() {
+    int n;
+    cin >> n;
+
+    int arr[n];
+
+    // Input array
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int key;
+    cin >> key;
+
+    int *ptr = arr;  // pointer to array
+    int found = 0;
+
+    for(int i = 0; i < n; i++) {
+        if(*(ptr + i) == key) {
+            cout << key << " is found at index " << i;
+            found = 1;
+            break;
+        }
+    }
+
+    if(!found) {
+        cout << "Not found";
+    }
+
+    return 0;
+}
 ```
 
 -----------------------
