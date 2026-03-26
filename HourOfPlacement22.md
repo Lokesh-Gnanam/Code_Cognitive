@@ -175,4 +175,11 @@ Refer sample input and output for formatting specifications.
 | **1** | `5` | 50, 40, 10, 20, 30 | `20` | `20 is found at index 3` |
 | **2** | `5` | 50, 40, 30, 10, 20 | `80` | `Not found` |
 
+```cpp
+
+```
+
+-----------------------
+---------------------------
+
 
